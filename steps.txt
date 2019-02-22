@@ -8,8 +8,8 @@ x Add state
     }
 Allows users to increase or decrease a total by a set amount
     x handle change for total and input field
-    when 'UP' is clicked, increase total by 1
-    when 'DOWN is clicked, descrease total by 1
+    x when 'UP' is clicked, increase total by 1
+    x when 'DOWN is clicked, descrease total by 1
 When the user presses save the current total should be added to the history
     when save is clicked....
         change state of total number
