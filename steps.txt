@@ -1,6 +1,11 @@
 
 
 BASE GOALS
+x Add state
+    state = {
+        total: ,
+        history: [  ]
+    }
 Allows users to increase or decrease a total by a set amount
     handle change for total and input field
     when 'UP' is clicked, increase total by 1
@@ -14,8 +19,5 @@ After being added to the history, the total should be set to 0
     when save is clicked,
         change state of total number to 0
 
-state = {
-    total: ,
-    history: [  ]
-}
+
     

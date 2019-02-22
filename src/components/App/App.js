@@ -3,6 +3,20 @@ import './App.css';
 import Header from '../Header/Header';
 
 class App extends Component {
+  state = {
+    total: 5,
+    history: [ 8, 3, 7],
+  }
+
+  // handle change for total 
+  handleChange = (event) => {
+    console.log('in handleChange');
+    this.setState({
+      total: event.target.value,
+    });
+  }
+
+
   render() {
     return (
       <div>
@@ -11,12 +25,12 @@ class App extends Component {
         <div>
           <p>Enter a number and click up or down. The total will increase or decrease by that amount.</p>
           <button>Up</button>
-          <input type="number" placeholder="Enter Number"/>
+          <input type="number" placeholder="Enter Number"  onChange={this.handleChange}/>
           <button>Down</button>
         </div>
 
         <div>
-          <p>0</p>
+          <p>{this.state.total}</p>
           <button>Save</button>
           <p>Click save above to save the current total in the history</p>
         </div>
