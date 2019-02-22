@@ -12,14 +12,16 @@ class App extends Component {
   handleChange = (event) => {
     console.log('in handleChange');
     this.setState({
-      total: event.target.value,
+      total: Number(event.target.value),    // event turn number to string
     });
   }
 
   // when 'UP' is clicked, increase total by 1
   handleUpClick = () => {
     console.log('UP clicked');
-    
+    this.setState({
+      total: this.state.total + 1
+    });
   }
 
   render() {
@@ -29,7 +31,7 @@ class App extends Component {
 
         <div>
           <p>Enter a number and click up or down. The total will increase or decrease by that amount.</p>
-          <button>Up</button>
+          <button onClick={this.handleUpClick}>Up</button>
           <input type="number" placeholder="Enter Number" value={this.state.total} onChange={this.handleChange}/>
           <button>Down</button>
         </div>
