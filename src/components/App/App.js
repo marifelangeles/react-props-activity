@@ -4,15 +4,21 @@ import Header from '../Header/Header';
 
 class App extends Component {
   state = {
-    total: 5,
-    history: [ 8, 3, 7],
+    total: {
+      number: 5
+    },
+    history: {
+      number: [ 8, 3, 7]
+    },
   }
 
   // handle change for total 
   handleChange = (event) => {
     console.log('in handleChange');
     this.setState({
-      total: Number(event.target.value),    // event turn number to string
+      total: {
+        number: Number(event.target.value)    // event turn number to string
+      },    
     });
   }
 
@@ -20,7 +26,9 @@ class App extends Component {
   handleUpClick = () => {
     console.log('UP clicked');
     this.setState({
-      total: this.state.total + 1
+      total: {
+        number: this.state.total.number + 1
+      },
     });
   }
 
@@ -28,9 +36,18 @@ class App extends Component {
   handleDownClick = () => {
     console.log('DOWN clicked');
     this.setState({
-      total: this.state.total - 1
+      total: {
+        number: this.state.total.number - 1
+      },
     });
   }
+
+  // save current total and add to history
+  handleSaveClick = () => {
+    console.log('in handleSaveClick');
+    
+  }
+
 
   render() {
     return (
@@ -40,12 +57,12 @@ class App extends Component {
         <div>
           <p>Enter a number and click up or down. The total will increase or decrease by that amount.</p>
           <button onClick={this.handleUpClick}>Up</button>
-          <input type="number" placeholder="Enter Number" value={this.state.total} onChange={this.handleChange}/>
+          <input type="number" placeholder="Enter Number" value={this.state.total.number} onChange={this.handleChange}/>
           <button onClick={this.handleDownClick}>Down</button>
         </div>
 
         <div>
-          <p>{this.state.total}</p>
+          <p>{this.state.total.number}</p>
           <button>Save</button>
           <p>Click save above to save the current total in the history</p>
         </div>
