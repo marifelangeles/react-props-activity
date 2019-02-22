@@ -16,6 +16,11 @@ class App extends Component {
     });
   }
 
+  // when 'UP' is clicked, increase total by 1
+  handleUpClick = () => {
+    console.log('UP clicked');
+    
+  }
 
   render() {
     return (
@@ -25,7 +30,7 @@ class App extends Component {
         <div>
           <p>Enter a number and click up or down. The total will increase or decrease by that amount.</p>
           <button>Up</button>
-          <input type="number" placeholder="Enter Number"  onChange={this.handleChange}/>
+          <input type="number" placeholder="Enter Number" value={this.state.total} onChange={this.handleChange}/>
           <button>Down</button>
         </div>
 
